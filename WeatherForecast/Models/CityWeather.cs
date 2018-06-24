@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WeatherForecast.Models
 {
-    class CityWeather
+    public class CityWeather
     {
         public int CityID { get; set; }
         public String CityName { get; set; }

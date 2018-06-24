@@ -11,23 +11,46 @@ namespace WeatherForecast.ViewModels
 {
     public class MainWindowViewModel : PropertyChangedBase
     {
-        private readonly CityWeather _weather;
+        private CityWeather _cityWeather;
+        private BindableCollection<CityWeather> _cityWeathers;
 
+     
         public MainWindowViewModel()
         {
-            _weather = new CityWeather();
+            _cityWeather = new CityWeather();
+            _cityWeathers = new BindableCollection<CityWeather>();
+        }
+
+        public CityWeather SelectedCityWeather
+        {
+            get { return _cityWeather; }
+            set
+            {
+                _cityWeather = value;
+                NotifyOfPropertyChange("SelectedCityWeather");
+            }
+        }
+
+        public BindableCollection<CityWeather> CityWeathers
+        {
+            get { return _cityWeathers; }
+            set
+            {
+                _cityWeathers = value;
+                NotifyOfPropertyChange("CityWeathers");
+            }
         }
 
         public string CityName
         {
             get
             {
-                return _weather.CityName;
+                return _cityWeather.CityName;
 
             }
             set
             {
-                _weather.CityName = value;
+                _cityWeather.CityName = value;
                 NotifyOfPropertyChange("CityName");
                 NotifyOfPropertyChange(() => CanAdd);
             }
@@ -37,12 +60,12 @@ namespace WeatherForecast.ViewModels
         {
             get
             {
-                return _weather.Temperature;
+                return _cityWeather.Temperature;
 
             }
             set
             {
-                _weather.Temperature = value;
+                _cityWeather.Temperature = value;
                 NotifyOfPropertyChange("Temperature");
             }
         }
@@ -51,12 +74,12 @@ namespace WeatherForecast.ViewModels
         {
             get
             {
-                return _weather.Pressure;
+                return _cityWeather.Pressure;
 
             }
             set
             {
-                _weather.Pressure = value;
+                _cityWeather.Pressure = value;
                 NotifyOfPropertyChange("Pressure");
             }
         }
@@ -64,12 +87,12 @@ namespace WeatherForecast.ViewModels
         {
             get
             {
-                return _weather.Humidity;
+                return _cityWeather.Humidity;
 
             }
             set
             {
-                _weather.Humidity = value;
+                _cityWeather.Humidity = value;
                 NotifyOfPropertyChange("Humidity");
             }
         }
@@ -77,12 +100,12 @@ namespace WeatherForecast.ViewModels
         {
             get
             {
-                return _weather.Cloudiness;
+                return _cityWeather.Cloudiness;
 
             }
             set
             {
-                _weather.Cloudiness = value;
+                _cityWeather.Cloudiness = value;
                 NotifyOfPropertyChange("Cloudiness");
             }
         }
@@ -90,12 +113,12 @@ namespace WeatherForecast.ViewModels
         {
             get
             {
-                return _weather.WindSpeed;
+                return _cityWeather.WindSpeed;
 
             }
             set
             {
-                _weather.WindSpeed = value;
+                _cityWeather.WindSpeed = value;
                 NotifyOfPropertyChange("WindSpeed");
             }
         }
@@ -103,12 +126,12 @@ namespace WeatherForecast.ViewModels
         {
             get
             {
-                return _weather.RainVolume;
+                return _cityWeather.RainVolume;
 
             }
             set
             {
-                _weather.Pressure = value;
+                _cityWeather.Pressure = value;
                 NotifyOfPropertyChange("RainVolume");
             }
         }
@@ -116,12 +139,12 @@ namespace WeatherForecast.ViewModels
         {
             get
             {
-                return _weather.SnowVolume;
+                return _cityWeather.SnowVolume;
 
             }
             set
             {
-                _weather.SnowVolume = value;
+                _cityWeather.SnowVolume = value;
                 NotifyOfPropertyChange("SnowVolume");
             }
         }
@@ -129,12 +152,12 @@ namespace WeatherForecast.ViewModels
         {
             get
             {
-                return _weather.DateTime;
+                return _cityWeather.DateTime;
 
             }
             set
             {
-                _weather.DateTime = value;
+                _cityWeather.DateTime = value;
                 NotifyOfPropertyChange("DateTime");
             }
         }
@@ -143,34 +166,36 @@ namespace WeatherForecast.ViewModels
         {
             get
             {
-                return _weather.Icon;
+                return _cityWeather.Icon;
 
             }
             set
             {
-                _weather.Icon = value;
+                _cityWeather.Icon = value;
                 NotifyOfPropertyChange("Icon");
             }
         }
 
         public void Add()
         {
-            if (!CityExists(_weather))
+            if (!CityExists(_cityWeather))
             {
-                MessageBox.Show(string.Format("Hi {0}!", _weather.CityName));
+                MessageBox.Show(string.Format("Hi {0}!", _cityWeather.CityName));
+                _cityWeathers.Add(_cityWeather);
             }
             else
-                MessageBox.Show(string.Format("Hey {0} , you exists!", _weather.CityName));
+                MessageBox.Show(string.Format("Hey {0} , you exists!", _cityWeather.CityName));
         }
 
         public bool CanAdd
         {
-            get { return !CityExists(_weather); }
+            get { return !CityExists(_cityWeather); }
         }
 
         private bool CityExists(CityWeather _weather)
         {
-            //Some logic
+            if (_cityWeathers.Contains(_weather)) return true;
+
             return false;
         }
 

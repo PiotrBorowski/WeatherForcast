@@ -11,6 +11,7 @@ namespace WeatherForecast.Services
     {
         public CityWeather GetWeather(int ID)
         {
+            return new CityWeather();
             
         }
     }

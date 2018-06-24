@@ -8,9 +8,18 @@
         Title="MainWindow" Height="350" Width="525">
     <Grid>
         <Label Content="Select City" HorizontalAlignment="Left" Margin="10,16,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
-        <ListBox HorizontalAlignment="Left" Height="209" Margin="10,72,0,0" VerticalAlignment="Top" Width="151"/>
+        <ListBox x:Name="CityWeathers" HorizontalAlignment="Left" Height="209" Margin="10,72,0,0" VerticalAlignment="Top" Width="151">
+             <ListBox.ItemTemplate>
+                 <DataTemplate>
+                     <StackPanel>
+                        <TextBlock Text="{Binding CityName}" />
+                    </StackPanel>
+                 </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
         <Button x:Name="Add" Content="+" HorizontalAlignment="Left" Margin="139,47,0,0" VerticalAlignment="Top" Width="22" FontWeight="Bold"/>
         <TextBox x:Name="CityName" HorizontalAlignment="Left" Height="20" Margin="10,47,0,0" TextWrapping="Wrap" Text="Jelenia Góra" VerticalAlignment="Top" Width="120" AutomationProperties.HelpText="City"/>
 
     </Grid>
+
 </Window>
