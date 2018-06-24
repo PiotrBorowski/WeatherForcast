@@ -1,0 +1,40 @@
+{
+  "coord": {
+    "lon": 15.73,
+    "lat": 50.85
+  },
+  "weather": [
+    {
+      "id": 500,
+      "main": "Rain",
+      "description": "light rain",
+      "icon": "10n"
+    }
+  ],
+  "base": "stations",
+  "main": {
+    "temp": 283.541,
+    "pressure": 981.95,
+    "humidity": 100,
+    "temp_min": 283.541,
+    "temp_max": 283.541,
+    "sea_level": 1031.6,
+    "grnd_level": 981.95
+  },
+  "wind": {
+    "speed": 1.86,
+    "deg": 255.502
+  },
+  "rain": { "3h": 1.545 },
+  "clouds": { "all": 92 },
+  "dt": 1529871950,
+  "sys": {
+    "message": 0.0038,
+    "country": "PL",
+    "sunrise": 1529808263,
+    "sunset": 1529867692
+  },
+  "id": 7530796,
+  "name": "Jelenia Góra",
+  "cod": 200
+}

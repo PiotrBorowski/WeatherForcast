@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using Caliburn.Micro;
 using WeatherForecast.Models;
+using WeatherForecast.Services;
 
 namespace WeatherForecast.ViewModels
 {
@@ -14,12 +15,17 @@ namespace WeatherForecast.ViewModels
         private CityWeather _cityWeather;
         private BindableCollection<CityWeather> _cityWeathers;
         private String _cityName;
+        private IWeatherApiService _service;
+        private const String URL = "http://api.openweathermap.org/data/2.5/";
+        private int JG = 7530796;
 
-     
+
+
         public MainWindowViewModel()
         {
             _cityWeather = new CityWeather();
             _cityWeathers = new BindableCollection<CityWeather>();
+            _service = new WeatherApiService(URL);
         }
 
         public CityWeather SelectedCityWeather
@@ -59,15 +65,14 @@ namespace WeatherForecast.ViewModels
         {
             if (!CityExists(CityName))
             {
-                MessageBox.Show(string.Format("Hi {0}!", _cityName));
-                _cityWeather = new CityWeather()
-                {
-                    CityName = _cityName
-                };
-                _cityWeathers.Add(_cityWeather);
+                MessageBox.Show(string.Format("Added {0}!", _cityName));
+
+                CityWeather cityWeather = _service.GetWeather(JG);
+                _cityWeathers.Add(cityWeather);
+               
             }
             else
-                MessageBox.Show(string.Format("Hey {0} , you exists!", _cityName));
+                MessageBox.Show(string.Format("Hey {0} , it exists!", _cityName));
         }
 
         public bool CanAdd

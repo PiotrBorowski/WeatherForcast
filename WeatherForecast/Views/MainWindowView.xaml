@@ -19,6 +19,7 @@
         </ListBox>
         <Button x:Name="Add" Content="+" HorizontalAlignment="Left" Margin="139,47,0,0" VerticalAlignment="Top" Width="22" FontWeight="Bold"/>
         <TextBox x:Name="CityName" HorizontalAlignment="Left" Height="20" Margin="10,47,0,0" TextWrapping="Wrap" Text="Jelenia Góra" VerticalAlignment="Top" Width="120" AutomationProperties.HelpText="City"/>
+        <Label x:Name="SelectedCityWeather_Temperature" Content="Label" HorizontalAlignment="Left" Margin="234,41,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.321,-0.114"/>
 
     </Grid>
 

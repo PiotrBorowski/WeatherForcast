@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WeatherForecast.Models
 {
-    public class CityWeather
+    public class CityWeather 
     {
         public int CityID { get; set; }
         public String CityName { get; set; }
@@ -19,6 +19,5 @@ namespace WeatherForecast.Models
         public float SnowVolume { get; set; }
         public DateTime DateTime { get; set; }
         public String Icon { get; set; }
-
     }
 }

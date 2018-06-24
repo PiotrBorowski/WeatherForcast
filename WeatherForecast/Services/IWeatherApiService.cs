@@ -2,9 +2,9 @@
 
 namespace WeatherForecast.Services
 {
-    internal interface IWeatherApiSevice
+    internal interface IWeatherApiService
     {
-        CityWeather GetWeather(int ID);
+        CityWeather GetWeather(int id);
 
     }
 }
