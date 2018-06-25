@@ -17,7 +17,7 @@ namespace WeatherForecast.Models
         public float WindSpeed { get; set; }
         public float RainVolume { get; set; }
         public float SnowVolume { get; set; }
-        public DateTime DateTime { get; set; }
+        public String DateTime { get; set; }
         public String Icon { get; set; }
     }
 }

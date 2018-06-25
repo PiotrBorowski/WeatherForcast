@@ -20,7 +20,11 @@
         <Button x:Name="Add" Content="+" HorizontalAlignment="Left" Margin="139,47,0,0" VerticalAlignment="Top" Width="22" FontWeight="Bold"/>
         <TextBox x:Name="CityName" HorizontalAlignment="Left" Height="20" Margin="10,47,0,0" TextWrapping="Wrap" Text="Jelenia Góra" VerticalAlignment="Top" Width="120" AutomationProperties.HelpText="City"/>
         <Label x:Name="SelectedCityWeather_Temperature" Content="Temp" HorizontalAlignment="Left" Margin="209,72,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.321,-0.114" Width="28"/>
-        <Label x:Name="SelectedCityWeather_CityName" Content="City" HorizontalAlignment="Left" Margin="209,16,0,0" VerticalAlignment="Top" Width="233" FontSize="20"/>
+        <Label x:Name="SelectedCityWeather_CityName" Content="City" HorizontalAlignment="Left" Margin="224,15,0,0" VerticalAlignment="Top" Width="233" FontSize="20"/>
+        <Label x:Name="SelectedCityWeather_Pressure" Content="Pressure" HorizontalAlignment="Left" Margin="209,113,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="SelectedCityWeather_Humidity" Content="Humidity" HorizontalAlignment="Left" Margin="209,144,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="SelectedCityWeather_WindSpeed" Content="WindSpeed" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="209,175,0,0"/>
+        <Label x:Name="SelectedCityWeather_DateTime" Content="DateTime" HorizontalAlignment="Left" Margin="352,283,0,0" VerticalAlignment="Top" Width="155"/>
 
     </Grid>
 
