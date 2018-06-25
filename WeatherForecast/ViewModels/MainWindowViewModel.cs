@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Mime;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Controls;
 using Caliburn.Micro;
 using WeatherForecast.Models;
 using WeatherForecast.Services;
@@ -17,7 +19,7 @@ namespace WeatherForecast.ViewModels
         private String _cityName;
         private IWeatherApiService _service;
         private const String URL = "http://api.openweathermap.org/data/2.5/";
-        private int JG = 7530796;
+        private int JG = 7530816;
 
 
 
@@ -59,7 +61,6 @@ namespace WeatherForecast.ViewModels
                 NotifyOfPropertyChange(() => CanAdd);
             }
         }
-
 
         public void Add()
         {
