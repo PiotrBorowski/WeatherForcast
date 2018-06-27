@@ -62,14 +62,13 @@ namespace WeatherForecast.ViewModels
             }
         }
 
-        public void Add()
+        public async void Add()
         {
             if (!CityExists(CityName))
             {
                 MessageBox.Show(string.Format("Added {0}!", _cityName));
 
-                CityWeather cityWeather = _service.GetWeather(JG);
-                _cityWeathers.Add(cityWeather);
+                _cityWeathers.Add(await _service.GetWeather(JG));
                
             }
             else
